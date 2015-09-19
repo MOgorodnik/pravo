@@ -1,0 +1,189 @@
+header {
+	background: #F5F5F5;
+	padding-top: 47px;
+}
+.man {
+	float: right;
+	margin-right: 66px;
+}
+.logo {
+	@include sprite($logo);
+	float: left;
+}
+
+nav {
+	float: right;
+	margin-right: 121px;
+	margin-top: 13px;
+}
+.language {
+	float: right;
+	margin-top: 7px;
+}
+.header-top {
+	@include clearfix;
+}
+.mainmenu-item {
+	display: inline-block;
+	a {
+		font-family: $gotham-medium;
+		font-size: 12px;
+		text-transform: uppercase;
+		color: #3F4147;
+		@include transition(0.2s);
+		&:hover{
+			text-decoration: none;
+			color: #A70C5D;
+		}
+	}
+	& + .mainmenu-item {
+		margin-left: 32px;
+	}
+}
+.language {
+	color: $main-pink;
+	font-family: $gotham-black;
+	font-size: 11px;
+	text-transform: uppercase;
+	text-align: right;
+	position: relative;
+	border: solid 2px #E0E0E3;
+	width: 68px;
+	height: 34px;
+	line-height: 30px;
+	@include border-radius(20px);
+	padding-right: 12px;
+	cursor: pointer;
+	@include transition(border-color 0.3s);
+	@include no-select;
+	&:hover{
+		&:before{
+			background: $main-pink;
+		}
+		border-color: $main-pink;
+	}
+	& span {
+		display: none;
+	}
+	&:before{
+		@include transition(background 0.3s);
+		content: "";
+		position: absolute;
+		display: inline-block;
+		height: 18px;
+		width: 18px;
+		background: #E0E0E3;
+		top: 6px;
+		@include border-radius(50%);
+	}
+	&.ru {
+		&:before{
+			left: 7px;
+		}
+		padding-right: 12px;
+		text-align: right;
+		& .ru {
+			display: inline;
+		}
+	}
+	&.en {
+		&:before{
+			right: 7px;
+		}
+		padding-left: 12px;
+		text-align: left;
+		& .en {
+			display: inline;
+		}
+	}
+}
+h1 {
+	color: #454545;
+	font-family: $gotham-bold;
+	font-size: 30px;
+	line-height: 35px;
+	margin-bottom: 39px;
+}
+.main-service-desc {
+	color: #454545;
+	font-family: $gotham;
+	font-size: 15px;
+	position: relative;
+	padding-top: 2px;
+	&:before{
+		content: "";
+		display: inline-block;
+		position: absolute;
+		top: -10px;
+		left: 0;
+		width: 40px;
+		height: 2px;
+		background: $main-pink;
+	}
+	span {
+		font-family: $gotham-bold;
+	}
+}
+.main-service {
+	width: 455px;
+	max-width: 100%;
+	float: left;
+}
+.btn {
+	width: 180px;
+	height: 50px;
+	background: $main-pink;
+	@include border-radius(24px);
+	border: none;
+	outline: none;
+	cursor: pointer;
+	font-family: $gotham-black;
+	font-size: 11px;
+	color: #FFF;
+	@include transition(0.3s);
+	&:hover{
+		background: $main-pink-hover;
+	}
+}
+.btn-services {
+	text-align: right;
+	padding-right: 32px;
+	position: relative;
+	text-transform: uppercase;
+	&:before{
+		content: "";
+		position: absolute;
+		left: 15px;
+		top: 14px;
+		display: inline-block;
+		@include sprite($arrow_bottom);
+	}
+}
+.play-btn {
+	background: #fff;
+	@include border-radius(50%);
+	border: none;
+	position: relative;
+	cursor: pointer;
+	height: 90px;
+	width: 90px;
+	outline: none;
+	margin-top: 85px;
+	margin-left: 15px;
+	@include transition(0.2s);
+	&:before{
+		content: "";
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		margin-top: -10px;
+		margin-left: -6px;
+		@include sprite($play_arrow);
+	}
+	&:hover{
+		@include box-shadow(0,0,15px,rgba(0,0,0,0.2),true);
+	}
+	&:active{
+		@include box-shadow(0,0,30px,rgba(0,0,0,0.2),true);
+	}
+}

@@ -1,0 +1,64 @@
+@import "sprites";
+
+/*fonts*/
+$bandera-bold: "BanderaPro-Bold";
+$gotham-black: "GothamPro-Black";
+$gotham-bold: "GothamPro-Bold";
+$gotham-medium: "GothamPro-Medium";
+$gotham: "GothamPro";
+$museo: "MuseoSansCyrl-100";
+$pfd: "PFDinDisplayPro-Regular";
+$room-bold: "Room-Bold";
+$room-thin: "Room-Thin";
+$systopie: "Systopie";
+
+/*colors*/
+$main-pink: #C4055F;
+$main-pink-hover: #A2034E;
+
+/*mixins*/
+@mixin clearfix {
+	&:after { 
+	content: "";
+	display: table; 
+	clear: both;
+	}
+}
+@mixin transform($transforms) {
+	-moz-transform: $transforms;
+	-o-transform: $transforms;
+	-ms-transform: $transforms;
+	-webkit-transform: $transforms;
+    transform: $transforms;
+}
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+@mixin transition($transition...) {
+    -moz-transition:    $transition;
+    -o-transition:      $transition;
+    -webkit-transition: $transition;
+    transition:         $transition;
+}
+@mixin no-select {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+@mixin box-shadow($top, $left, $blur, $color, $inset: false) {
+  @if $inset {
+    -webkit-box-shadow:inset $top $left $blur $color;
+    -moz-box-shadow:inset $top $left $blur $color;
+    box-shadow:inset $top $left $blur $color;
+  } @else {
+    -webkit-box-shadow: $top $left $blur $color;
+    -moz-box-shadow: $top $left $blur $color;
+    box-shadow: $top $left $blur $color;
+  }
+}
